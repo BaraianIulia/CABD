@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Animals</title>
+</head>
+<body>
+<a href="/">Back</a>
+<div align="center">
+    <h1>Animals</h1>
+    <a href="">Add animal</a>
+    <br/><br/>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>Birthday</th>
+            <th>Species</th>
+            <th>Breed</th>
+            <th>Sex</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="animal : ${listAnimals}">
+            <td th:text="${animal.code}">Code</td>
+            <td th:text="${animal.name}">Name</td>
+            <td th:text="${animal.weight}">Weight</td>
+            <td th:text="${animal.height}">Height</td>
+            <td th:text="${animal.birthday}">Birthday</td>
+            <td th:text="${animal.species}">Species</td>
+            <td th:text="${animal.breed}">Breed</td>
+            <td th:text="${animal.sex}">Sex</td>
+            <!--            <td>-->
+            <!--                <a th:href="/@{'/edit/' + ${animal.code}}">Edit</a>-->
+            <!--                &nbsp;&nbsp;&nbsp;-->
+            <!--                <a th:href="/@{'/delete/' + ${animal.code}}">Delete</a>-->
+            <!--            </td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
