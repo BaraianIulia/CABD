@@ -1,9 +1,9 @@
 package com.project.cabd.DAO;
 
-import com.project.cabd.entities.Animal;
-import com.project.cabd.entities.AnimalDistribution;
-import com.project.cabd.entities.AnimalDistributionH;
-import com.project.cabd.entities.AnimalMeasurement;
+import com.project.cabd.entities.pure.Animal;
+import com.project.cabd.entities.pure.AnimalDistribution;
+import com.project.cabd.entities.pure.AnimalDistributionH;
+import com.project.cabd.entities.pure.AnimalMeasurement;
 
 import java.util.List;
 

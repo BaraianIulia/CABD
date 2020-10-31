@@ -1,16 +1,19 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.pure;
+
+import com.project.cabd.entities.helper.TTime;
+import com.project.cabd.entities.helper.WorkingHours;
 
 public class ZookeeperDistributionH {
 
     private String sectorCode;
     private String zookeeperCnp;
     private WorkingHours workingHours;
-    private Time activityHours;
+    private TTime activityHours;
 
-    protected ZookeeperDistributionH() {
+    public ZookeeperDistributionH() {
     }
 
-    protected ZookeeperDistributionH(String sectorCode, String zookeeperCnp, WorkingHours workingHours, Time activityHours) {
+    public ZookeeperDistributionH(String sectorCode, String zookeeperCnp, WorkingHours workingHours, TTime activityHours) {
         this.sectorCode = sectorCode;
         this.zookeeperCnp = zookeeperCnp;
         this.workingHours = workingHours;
@@ -41,11 +44,11 @@ public class ZookeeperDistributionH {
         this.workingHours = workingHours;
     }
 
-    public Time getActivityHours() {
+    public TTime getActivityHours() {
         return activityHours;
     }
 
-    public void setActivityHours(Time activityHours) {
+    public void setActivityHours(TTime activityHours) {
         this.activityHours = activityHours;
     }
 

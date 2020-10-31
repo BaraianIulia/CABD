@@ -1,16 +1,18 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.pure;
+
+import com.project.cabd.entities.helper.TTime;
 
 public class AnimalMeasurement {
 
     private String animalCode;
     private float weight;
     private float height;
-    private Time measurementDate;
+    private TTime measurementDate;
 
-    protected AnimalMeasurement() {
+    public AnimalMeasurement() {
     }
 
-    protected AnimalMeasurement(String animalCode, float weight, float height, Time measurementDate) {
+    public AnimalMeasurement(String animalCode, float weight, float height, TTime measurementDate) {
         this.animalCode = animalCode;
         this.weight = weight;
         this.height = height;
@@ -41,11 +43,11 @@ public class AnimalMeasurement {
         this.height = height;
     }
 
-    public Time getMeasurementDate() {
+    public TTime getMeasurementDate() {
         return measurementDate;
     }
 
-    public void setMeasurementDate(Time measurementDate) {
+    public void setMeasurementDate(TTime measurementDate) {
         this.measurementDate = measurementDate;
     }
 

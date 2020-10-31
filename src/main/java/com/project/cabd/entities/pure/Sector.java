@@ -1,4 +1,4 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.pure;
 
 public class Sector {
 
@@ -7,10 +7,10 @@ public class Sector {
     private float area;
     private int capacity;
 
-    protected Sector() {
+    public Sector() {
     }
 
-    protected Sector(String code, String name, float area, int capacity) {
+    public Sector(String code, String name, float area, int capacity) {
         this.code = code;
         this.name = name;
         this.area = area;

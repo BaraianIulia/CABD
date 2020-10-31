@@ -1,14 +1,14 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.pure;
 
 public class AnimalDistribution {
 
     private String animalCode;
     private String sectorCode;
 
-    protected AnimalDistribution() {
+    public AnimalDistribution() {
     }
 
-    protected AnimalDistribution(String animalCode, String sectorCode) {
+    public AnimalDistribution(String animalCode, String sectorCode) {
         this.animalCode = animalCode;
         this.sectorCode = sectorCode;
     }

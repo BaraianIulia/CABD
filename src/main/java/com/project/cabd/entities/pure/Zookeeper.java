@@ -1,4 +1,4 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.pure;
 
 public class Zookeeper {
 
@@ -9,10 +9,10 @@ public class Zookeeper {
     private String phoneNumber;
     private String role;
 
-    protected Zookeeper() {
+    public Zookeeper() {
     }
 
-    protected Zookeeper(String cnp, String firstName, String lastName, String email, String phoneNumber, String role) {
+    public Zookeeper(String cnp, String firstName, String lastName, String email, String phoneNumber, String role) {
         this.cnp = cnp;
         this.firstName = firstName;
         this.lastName = lastName;

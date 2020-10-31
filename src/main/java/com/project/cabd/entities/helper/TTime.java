@@ -1,16 +1,16 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.helper;
 
 import java.sql.Date;
 
-public class Time {
+public class TTime {
 
     private Date startTime;
     private Date endTime;
 
-    protected Time() {
+    public TTime() {
     }
 
-    protected Time(Date startTime, Date endTime) {
+    public TTime(Date startTime, Date endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
     }

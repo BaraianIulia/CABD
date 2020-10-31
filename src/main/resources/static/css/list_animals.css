@@ -1,0 +1,23 @@
+#container-animals, #container-details {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+#container-measurements, #container-distribution {
+    display: inline-block;
+}
+
+#container-animals-table {
+    overflow: auto;
+    height: 300px;
+}
+
+#container-measurements-table, #container-distribution-table {
+    overflow: auto;
+    height: 200px;
+}
+
+#animals-table, #measurements-table, #distribution-table, th, td {
+    border: 1px solid black;
+}

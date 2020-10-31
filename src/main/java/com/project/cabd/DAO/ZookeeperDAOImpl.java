@@ -1,8 +1,8 @@
 package com.project.cabd.DAO;
 
-import com.project.cabd.entities.Zookeeper;
-import com.project.cabd.entities.ZookeeperDistribution;
-import com.project.cabd.entities.ZookeeperDistributionH;
+import com.project.cabd.entities.pure.Zookeeper;
+import com.project.cabd.entities.pure.ZookeeperDistribution;
+import com.project.cabd.entities.pure.ZookeeperDistributionH;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

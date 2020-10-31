@@ -1,15 +1,17 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.pure;
+
+import com.project.cabd.entities.helper.TTime;
 
 public class AnimalDistributionH {
 
     private String animalCode;
     private String sectorCode;
-    private Time residingTime;
+    private TTime residingTime;
 
-    protected AnimalDistributionH() {
+    public AnimalDistributionH() {
     }
 
-    protected AnimalDistributionH(String animalCode, String sectorCode, Time residingTime) {
+    public AnimalDistributionH(String animalCode, String sectorCode, TTime residingTime) {
         this.animalCode = animalCode;
         this.sectorCode = sectorCode;
         this.residingTime = residingTime;
@@ -31,11 +33,11 @@ public class AnimalDistributionH {
         this.sectorCode = sectorCode;
     }
 
-    public Time getResidingTime() {
+    public TTime getResidingTime() {
         return residingTime;
     }
 
-    public void setResidingTime(Time residingTime) {
+    public void setResidingTime(TTime residingTime) {
         this.residingTime = residingTime;
     }
 

@@ -1,14 +1,14 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.helper;
 
 public class WorkingHours {
 
     private String startHour;
     private String endHour;
 
-    protected WorkingHours() {
+    public WorkingHours() {
     }
 
-    protected WorkingHours(String startHour, String endHour) {
+    public WorkingHours(String startHour, String endHour) {
         this.startHour = startHour;
         this.endHour = endHour;
     }

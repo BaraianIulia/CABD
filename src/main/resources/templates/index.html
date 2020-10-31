@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Zoo</title>
@@ -12,10 +13,10 @@
 
 <main>
     <p>We manage:</p>
-    <a href="/animals">Animals</a>
-    <a href="/zookeepers">Zookeepers</a>
-    <a href="/zoo_areas">Zoo areas</a>
-    <a href="/reports">Reports</a>
+    <a th:href="@{'animals/list_animals/' + ${initialAnimal.code}}">Animals</a>
+    <a th:href="@{'zookeepers/zookeepers'}">Zookeepers</a>
+    <a th:href="@{'areas/zoo_areas'}">Zoo areas</a>
+    <a th:href="@{'reports/reports'}">Reports</a>
 </main>
 
 </body>

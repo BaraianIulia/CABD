@@ -1,6 +1,6 @@
 package com.project.cabd.DAO;
 
-import com.project.cabd.entities.Sector;
+import com.project.cabd.entities.pure.Sector;
 
 import java.util.List;
 

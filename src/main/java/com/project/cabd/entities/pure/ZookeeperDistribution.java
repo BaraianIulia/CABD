@@ -1,4 +1,6 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.pure;
+
+import com.project.cabd.entities.helper.WorkingHours;
 
 public class ZookeeperDistribution {
 
@@ -6,10 +8,10 @@ public class ZookeeperDistribution {
     private String zookeeperCnp;
     private WorkingHours workingHours;
 
-    protected ZookeeperDistribution() {
+    public ZookeeperDistribution() {
     }
 
-    protected ZookeeperDistribution(String sectorCode, String zookeeperCnp, WorkingHours workingHours) {
+    public ZookeeperDistribution(String sectorCode, String zookeeperCnp, WorkingHours workingHours) {
         this.sectorCode = sectorCode;
         this.zookeeperCnp = zookeeperCnp;
         this.workingHours = workingHours;

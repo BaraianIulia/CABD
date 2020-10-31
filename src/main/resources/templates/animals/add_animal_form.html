@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>New Animal</title>
+    <link rel="stylesheet" th:href="@{/css/add_animal_form.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<a th:href="@{'list_animals/' + ${initialAnimal.code}}">Back</a>
+
+<div id="container-add-animal">
+    <h1>Enter New Animal</h1>
+    <br/>
+    <form action="#" th:action="@{/animals/save_animal}" th:object="${newAnimal}"
+          method="post">
+
+        <table id="add-animal">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{name}"/></td>
+            </tr>
+            <tr>
+                <td>Weight:</td>
+                <td><input type="number" step="0.01" th:field="*{weight}"/></td>
+            </tr>
+            <tr>
+                <td>Height:</td>
+                <td><input type="number" step="0.01" th:field="*{height}"/></td>
+            </tr>
+            <tr>
+                <td>Birthday:</td>
+                <td><input type="date" th:field="*{birthday}"/></td>
+            </tr>
+            <tr>
+                <td>Species:</td>
+                <td>
+                    <select name="species" th:field="*{species}">
+                        <option value="mammal">mammal</option>
+                        <option value="reptile">reptile</option>
+                        <option value="bird">bird</option>
+                        <option value="amphibian">amphibian</option>
+                        <option value="fish">fish</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Breed:</td>
+                <td><input type="text" th:field="*{breed}"/></td>
+            </tr>
+            <tr>
+                <td>Sex:</td>
+                <td><select name="sex" th:field="*{sex}">
+                    <option value="f">f</option>
+                    <option value="m">m</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+
+</html>

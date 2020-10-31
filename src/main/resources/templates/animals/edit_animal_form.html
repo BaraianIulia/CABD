@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Edit Animal</title>
+    <link rel="stylesheet" th:href="@{/css/edit_animal_form.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<a th:href="@{'../list_animals/' + ${initialAnimal.code}}">Back</a>
+
+<div id="container-edit-animal">
+    <h1>Edit Animal</h1>
+    <br/>
+    <form action="#" th:action="@{/animals/update_animal}" th:object="${animalToBeUpdated}"
+          method="post">
+
+        <table id="edit-animal">
+            <tr>
+                <td>Code:</td>
+                <td><input type="text" th:field="*{code}" readonly="readonly"/></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{name}"/></td>
+            </tr>
+            <tr>
+                <td>Weight:</td>
+                <td><input type="number" step="0.01" th:field="*{weight}"/></td>
+            </tr>
+            <tr>
+                <td>Height:</td>
+                <td><input type="number" step="0.01" th:field="*{height}"/></td>
+            </tr>
+            <tr>
+                <td>Birthday:</td>
+                <td><input type="date" th:field="*{birthday}"/></td>
+            </tr>
+            <tr>
+                <td>Species:</td>
+                <td>
+                    <select name="species" th:field="*{species}">
+                        <option value="mammal">mammal</option>
+                        <option value="reptile">reptile</option>
+                        <option value="bird">bird</option>
+                        <option value="amphibian">amphibian</option>
+                        <option value="fish">fish</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Breed:</td>
+                <td><input type="text" th:field="*{breed}"/></td>
+            </tr>
+            <tr>
+                <td>Sex:</td>
+                <td><select name="sex" th:field="*{sex}">
+                    <option value="f">f</option>
+                    <option value="m">m</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+
+</html>

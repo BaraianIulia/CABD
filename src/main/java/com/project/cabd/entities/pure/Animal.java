@@ -1,4 +1,4 @@
-package com.project.cabd.entities;
+package com.project.cabd.entities.pure;
 
 import java.sql.Date;
 
@@ -13,10 +13,10 @@ public class Animal {
     private String breed;
     private char sex;
 
-    protected Animal() {
+    public Animal() {
     }
 
-    protected Animal(String code, String name, float weight, float height, Date birthday, String species, String breed, char sex) {
+    public Animal(String code, String name, float weight, float height, Date birthday, String species, String breed, char sex) {
         this.code = code;
         this.name = name;
         this.weight = weight;
