@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Edit Zookeeper</title>
+    <link rel="stylesheet" th:href="@{/css/edit_zookeeper_form.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<a th:href="@{'../list_zookeepers/' + ${initialZookeeper.cnp}}">Back</a>
+
+<div id="container-edit-zookeeper">
+    <h1>Edit Zookeeper</h1>
+    <br/>
+    <form action="#" th:action="@{'../update_zookeeper/' + ${zookeeperToBeUpdated.cnp}}"
+          th:object="${zookeeperToBeUpdated}"
+
+          method="post">
+
+        <table id="edit-zookeeper">
+            <tr>
+                <td>Cnp:</td>
+                <td><input type="text" th:field="*{cnp}"/></td>
+            </tr>
+            <tr>
+                <td>First name:</td>
+                <td><input type="text" th:field="*{firstName}"/></td>
+            </tr>
+            <tr>
+                <td>Last name:</td>
+                <td><input type="text" th:field="*{lastName}"/></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" th:field="*{email}"/></td>
+            </tr>
+            <tr>
+                <td>Phone number:</td>
+                <td><input type="tel" pattern="07[0-9]{8}" th:field="*{phoneNumber}"/></td>
+            </tr>
+            <tr>
+                <td>Role:</td>
+                <td>
+                    <select name="roles" th:field="*{role}">
+                        <option value="cleaner">cleaner</option>
+                        <option value="feeder">feeder</option>
+                        <option value="trainer">trainer</option>
+                        <option value="surveiller">surveiller</option>
+                        <option value="groomer">groomer</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+
+</html>

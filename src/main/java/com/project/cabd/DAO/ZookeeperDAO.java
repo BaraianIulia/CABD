@@ -8,17 +8,17 @@ import java.util.List;
 
 public interface ZookeeperDAO {
 
-    List<Zookeeper> getZookeeepers();
+    List<Zookeeper> getZookeepers();
 
-    List<String> getZookeeepersCnps();
+    List<String> getZookeeperCnps();
 
-    Zookeeper getZookeeeper(String cnp);
+    Zookeeper getZookeeper(String cnp);
 
     List<ZookeeperDistributionH> getZookeeperDistribution(String cnp);
 
     Zookeeper insertZookeeper(Zookeeper zookeeper);
 
-    Zookeeper updateZookeeper(Zookeeper zookeeper, String newCnp);
+    Zookeeper updateZookeeper(String oldCnp, Zookeeper zookeeper);
 
     Zookeeper deleteZookeeper(String cnp);
 

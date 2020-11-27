@@ -1,0 +1,23 @@
+#container-zookeepers, #container-details {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+#container-distribution {
+    display: inline-block;
+}
+
+#container-zookeepers-table {
+    overflow: auto;
+    height: 300px;
+}
+
+#container-distribution-table {
+    overflow: auto;
+    height: 200px;
+}
+
+#zookeepers-table, #distribution-table, th, td {
+    border: 1px solid black;
+}

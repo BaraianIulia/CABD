@@ -1,0 +1,14 @@
+#container-sectors, #container-details {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+#container-sectors-table {
+    overflow: auto;
+    height: 300px;
+}
+
+#sectors-table, th, td {
+    border: 1px solid black;
+}

@@ -8,16 +8,16 @@ public class ZookeeperDistributionH {
     private String sectorCode;
     private String zookeeperCnp;
     private WorkingHours workingHours;
-    private TTime activityHours;
+    private TTime activityTime;
 
     public ZookeeperDistributionH() {
     }
 
-    public ZookeeperDistributionH(String sectorCode, String zookeeperCnp, WorkingHours workingHours, TTime activityHours) {
+    public ZookeeperDistributionH(String sectorCode, String zookeeperCnp, WorkingHours workingHours, TTime activityTime) {
         this.sectorCode = sectorCode;
         this.zookeeperCnp = zookeeperCnp;
         this.workingHours = workingHours;
-        this.activityHours = activityHours;
+        this.activityTime = activityTime;
     }
 
     public String getSectorCode() {
@@ -44,12 +44,12 @@ public class ZookeeperDistributionH {
         this.workingHours = workingHours;
     }
 
-    public TTime getActivityHours() {
-        return activityHours;
+    public TTime getActivityTime() {
+        return activityTime;
     }
 
-    public void setActivityHours(TTime activityHours) {
-        this.activityHours = activityHours;
+    public void setActivityTime(TTime activityTime) {
+        this.activityTime = activityTime;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class ZookeeperDistributionH {
                 "sectorCode='" + sectorCode + '\'' +
                 ", zookeeperCnp='" + zookeeperCnp + '\'' +
                 ", workingHours=" + workingHours +
-                ", activityHours=" + activityHours +
+                ", activityHours=" + activityTime +
                 '}';
     }
 }

@@ -14,8 +14,8 @@
 <main>
     <p>We manage:</p>
     <a th:href="@{'animals/list_animals/' + ${initialAnimal.code}}">Animals</a>
-    <a th:href="@{'zookeepers/zookeepers'}">Zookeepers</a>
-    <a th:href="@{'areas/zoo_areas'}">Zoo areas</a>
+    <a th:href="@{'zookeepers/list_zookeepers/' + ${initialZookeeper.cnp}}">Zookeepers</a>
+    <a th:href="@{'areas/list_zoo_areas'}">Zoo areas</a>
     <a th:href="@{'reports/reports'}">Reports</a>
 </main>
 

@@ -61,7 +61,7 @@ create or replace package CRUD is
     function read_animal_distribution(p_code char) return sys_refcursor;
     
     function read_zookeepers return sys_refcursor;
-    function read_zookepers_cnps return sys_refcursor;
+    function read_zookeeper_cnps return sys_refcursor;
     function read_zookeeper(p_cnp char) return t_zookeeper;
     function read_zookeeper_distribution(p_cnp char) return sys_refcursor;
     
@@ -101,7 +101,7 @@ create or replace package body CRUD is
     function is_valid_phone_number(p_phone_number varchar2) return integer as
         v_boolean integer;
     begin
-        select case when regexp_like (p_phone_number, '^0[1-9]{9}$') then 1 else 0 end into v_boolean from dual;
+        select case when regexp_like (p_phone_number, '^07[0-9]{8}$') then 1 else 0 end into v_boolean from dual;
         return v_boolean;
     end is_valid_phone_number;
 
@@ -260,7 +260,7 @@ create or replace package body CRUD is
                 if sqlcode = -1400 then
                     raise_application_error(-20002, 'Not null constraint violated!');
                 elsif sqlcode = -2290 then
-                    raise_application_error(-20005, 'Check constraint violated! Caspacity needs to be between 0 and 5000!');
+                    raise_application_error(-20005, 'Check constraint violated! Capacity needs to be between 0 and 5000!');
                 else
                     raise;
                 end if;
@@ -501,11 +501,11 @@ create or replace package body CRUD is
                     raise;
                 end if;
     end change_zookeeper_working_program;
-    
-    
-    
-    
-    
+
+
+
+
+
     function read_animals return sys_refcursor as
         /*v_animals t_animals := t_animals();
         cursor c_animals is select * from animals order by to_number(trim(substr(code, 2)));
@@ -620,7 +620,7 @@ create or replace package body CRUD is
         return v_zookeepers;
     end read_zookeepers;
     
-    function read_zookepers_cnps return sys_refcursor as
+    function read_zookeeper_cnps return sys_refcursor as
         /*v_cnps t_cnps := t_cnps();
         cursor c_zookeepers_cnps is select cnp from zookeepers order by last_name, first_name, cnp;
         x c_zookeepers_cnps%rowtype;*/
@@ -634,7 +634,7 @@ create or replace package body CRUD is
         open v_cnps for 
             select cnp from zookeepers order by last_name, first_name, cnp;
         return v_cnps;
-    end read_zookepers_cnps;
+    end read_zookeeper_cnps;
     
     function read_zookeeper(p_cnp char) return t_zookeeper as
         v_zookeeper zookeepers%rowtype;

@@ -103,7 +103,7 @@ public class AnimalsController {
     }
 
     @PostMapping(value = "/move_animal")
-    public String update(@ModelAttribute("oldNewAnimalDistribution") OldNewAnimalDistribution oldNewAnimalDistribution) {
+    public String updateDistribution(@ModelAttribute("oldNewAnimalDistribution") OldNewAnimalDistribution oldNewAnimalDistribution) {
         return "redirect:/animals/list_animals/"
                 + animalDAOImpl.moveAnimal(new AnimalDistribution(oldNewAnimalDistribution.getAnimalCode(), oldNewAnimalDistribution.getOldSectorCode()),
                 new AnimalDistribution(oldNewAnimalDistribution.getAnimalCode(), oldNewAnimalDistribution.getNewSectorCode())).getAnimalCode();

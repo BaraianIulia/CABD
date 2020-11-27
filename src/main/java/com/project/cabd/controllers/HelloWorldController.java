@@ -1,6 +1,7 @@
 package com.project.cabd.controllers;
 
 import com.project.cabd.entities.pure.Animal;
+import com.project.cabd.entities.pure.Zookeeper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class HelloWorldController {
 
     @GetMapping("/")
-    public String welcome(@ModelAttribute("initialAnimal") Animal initialAnimal) {
+    public String welcome(@ModelAttribute("initialAnimal") Animal initialAnimal, @ModelAttribute("initialZookeeper") Zookeeper initialZookeeper) {
         return "index";
     }
 
