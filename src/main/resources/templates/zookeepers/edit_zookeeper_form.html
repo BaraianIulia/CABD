@@ -11,10 +11,10 @@
 
 <body>
 
-<a th:href="@{'../list_zookeepers/' + ${initialZookeeper.cnp}}">Back</a>
+<a class="button" th:href="@{'../list_zookeepers/' + ${initialZookeeper.cnp}}">Back</a>
 
 <div id="container-edit-zookeeper">
-    <h1>Edit Zookeeper</h1>
+    <h1 class="table-title">Edit Zookeeper</h1>
     <br/>
     <form action="#" th:action="@{'../update_zookeeper/' + ${zookeeperToBeUpdated.cnp}}"
           th:object="${zookeeperToBeUpdated}"
@@ -56,7 +56,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <button type="submit">Save</button>
+                    <button class="button" type="submit">Save</button>
                 </td>
             </tr>
         </table>

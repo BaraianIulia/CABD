@@ -14,7 +14,7 @@
 
 <body>
 
-<a href="/">Back</a>
+<a class="button" href="/">Back</a>
 
 <!-- Bootstrap modal div for adding a new working schedule for a zookeeper -->
 <div class="modal fade" id="insertWorkingHoursModal" role="dialog">
@@ -146,8 +146,8 @@
 
 <!-- ZOOKEEPERS table -->
 <div id="container-zookeepers">
-    <h1>Zookeepers</h1>
-    <a th:href="@{/zookeepers/add_zookeeper_form}">Add zookeeper</a>
+    <h1 class="table-title">Zookeepers</h1>
+    <a class="button" th:href="@{/zookeepers/add_zookeeper_form}">Add zookeeper</a>
     <br/><br/>
     <div id="container-zookeepers-table">
         <table id="zookeepers-table">
@@ -171,12 +171,12 @@
                 <td th:text="${zookeeper.phoneNumber}">Phone number</td>
                 <td th:text="${zookeeper.role}">Role</td>
                 <td>
-                    <a th:href="@{'../edit_zookeeper/' + ${zookeeper.cnp}}">Edit</a>
+                    <a class="table-action" th:href="@{'../edit_zookeeper/' + ${zookeeper.cnp}}">Edit</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'../delete_zookeeper/' + ${zookeeper.cnp}}"
+                    <a class="table-action" th:href="@{'../delete_zookeeper/' + ${zookeeper.cnp}}"
                        onclick="if (!(confirm('Are you sure you want to delete this zookeeper?'))) return false">Delete</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{${zookeeper.cnp}}">Distribution</a>
+                    <a class="table-action" th:href="@{${zookeeper.cnp}}">Distribution</a>
                 </td>
             </tr>
             </tbody>
@@ -187,9 +187,9 @@
 <!-- DISTRIBUTION tables for a SPECIFIC ZOOKEEPER -->
 <div id="container-details">
     <div id="container-distribution">
-        <h1 th:text="${selectedZookeeper.firstName + ' ' + selectedZookeeper.lastName + ' - Distribution'}">
+        <h1 class="table-title" th:text="${selectedZookeeper.firstName + ' ' + selectedZookeeper.lastName + ' - Distribution'}">
             Distribution</h1>
-        <button id="insertWorkingHours" type="button" class="btn btn-default" data-toggle="modal"
+        <button id="insertWorkingHours" type="button" class="button" data-toggle="modal"
                 data-target="#insertWorkingHoursModal">
             Insert working hours
         </button>
@@ -218,12 +218,12 @@
                     <td th:if="${zookeeperDistribution.activityTime.getEndTime() == null}">
                         <button th:id="'changeWorkingProgram' + ${zookeeperDistribution.zookeeperCnp} + ${zookeeperDistribution.sectorCode} + ${zookeeperDistribution.workingHours.getStartHour()} + ${zookeeperDistribution.workingHours.getEndHour()}"
                                 type="button"
-                                class="btn btn-default" data-toggle="modal" data-target="#changeWorkingProgramModal"
+                                class="table-action" data-toggle="modal" data-target="#changeWorkingProgramModal"
                                 th:attr="onclick='insertOldDistribution(\'' + ${zookeeperDistribution.sectorCode} + '\', \'' + ${zookeeperDistribution.workingHours.getStartHour()} + '\', \'' + ${zookeeperDistribution.workingHours.getEndHour()} + '\');'">
                             Change working program
                         </button>
                         &nbsp;&nbsp;&nbsp;
-                        <a th:href="@{'../delete_zookeeper_working_hours/zookeeper_cnp/' + ${zookeeperDistribution.zookeeperCnp} + '/sector_code/' + ${zookeeperDistribution.sectorCode} + '/start_hour/' + ${zookeeperDistribution.workingHours.startHour} + '/end_hour/' + ${zookeeperDistribution.workingHours.endHour}}"
+                        <a class="table-action" th:href="@{'../delete_zookeeper_working_hours/zookeeper_cnp/' + ${zookeeperDistribution.zookeeperCnp} + '/sector_code/' + ${zookeeperDistribution.sectorCode} + '/start_hour/' + ${zookeeperDistribution.workingHours.startHour} + '/end_hour/' + ${zookeeperDistribution.workingHours.endHour}}"
                            onclick="if (!(confirm('Are you sure you want to delete this distribution?'))) return false">Delete</a>
                     </td>
                 </tr>
