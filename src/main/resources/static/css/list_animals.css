@@ -1,6 +1,6 @@
 #container-animals, #container-details {
     margin: 0 auto;
-    width: 50%;
+    width: 75%;
     text-align: center;
 }
 
@@ -10,14 +10,110 @@
 
 #container-animals-table {
     overflow: auto;
-    height: 300px;
+    height: 400px;
 }
 
 #container-measurements-table, #container-distribution-table {
     overflow: auto;
-    height: 200px;
+    height: 400px;
 }
 
 #animals-table, #measurements-table, #distribution-table, th, td {
     border: 1px solid black;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed ;
+}
+
+#animals-table td, #animals-table th{
+    border: 1px solid #ddd;
+    padding: 40px;
+}
+
+#measurements-table td, #measurements-table th{
+    border: 1px solid #ddd;
+    padding: 60px;
+}
+
+#distribution-table td, #distribution-table th{
+    border: 1px solid #ddd;
+    padding: 60px;
+}
+
+#animals-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#measurements-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#distribution-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#animals-table tr:hover {
+    background-color: #ddd;
+}
+
+#measurements-table tr:hover {
+    background-color: #ddd;
+}
+
+#distribution-table tr:hover {
+    background-color: #ddd;
+}
+
+#animals-table th, #measurements-table th, #distribution-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    table-layout: fixed;
+}
+
+.table-title {
+    font-size: 70px;
+    color: black;
+    align-content: center;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.button {
+    text-decoration: none;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.button:hover{
+    text-decoration: none;
+    background-color: #77d17b; /* Green */
+    color: white;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.table-action {
+    text-decoration: none;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    outline: inherit;
+}
+
+.table-action:hover{
+    color: #77d17b;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    text-decoration: underline;
 }

@@ -1,0 +1,56 @@
+html {
+    background: url("picture/zoohomepage.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.header-title {
+    text-align: center;
+    background: #aa2512;
+    color: #000000;
+    margin-left: 1%;
+    font-size: 70px;
+    display: inline-block;
+    align-content: center;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.header-content {
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+.list-style {
+    width: 30%;
+    background: #aa2512;
+    color: #000000;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    position: absolute;
+    bottom: 10px;
+    right: 25%;
+    left: 45%;
+    margin-left: -150px;
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+}
+
+p {
+    text-align: center;
+    font-size: 50px;
+}
+
+a {
+    font-size: 30px;
+    text-decoration: none;
+    color: #460710;
+}
+
+a:hover {
+    color: #000000;
+
+}

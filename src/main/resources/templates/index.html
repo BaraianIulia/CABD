@@ -4,19 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Zoo</title>
+    <link rel="stylesheet" th:href="@{/css/homepage.css}">
 </head>
 <body>
-
 <header>
-    <h1 class="header-title">Welcome to OUR ZOO!</h1>
+    <div class="header-content">
+        <h1 class="header-title">Welcome</h1>
+        <h1 class="header-title">to</h1>
+        <h1 class="header-title">OUR</h1>
+        <h1 class="header-title">ZOO</h1>
+        <h1 class="header-title">!</h1>
+    </div>
 </header>
 
 <main>
-    <p>We manage:</p>
-    <a th:href="@{'animals/list_animals/' + ${initialAnimal.code}}">Animals</a>
-    <a th:href="@{'zookeepers/list_zookeepers/' + ${initialZookeeper.cnp}}">Zookeepers</a>
-    <a th:href="@{'areas/list_zoo_areas'}">Zoo areas</a>
-    <a th:href="@{'reports/reports'}">Reports</a>
+    <div class="list-style">
+        <p>We manage</p>
+        <ul>
+            <li>
+                <a th:href="@{'animals/list_animals/' + ${initialAnimal.code}}">Animals</a></li>
+            <li>
+                <a th:href="@{'zookeepers/list_zookeepers/' + ${initialZookeeper.cnp}}">Zookeepers</a></li>
+            <li>
+                <a th:href="@{'areas/list_zoo_areas'}">Zoo areas</a></li>
+            <li>
+                <a th:href="@{'reports/reports'}">Reports</a></li>
+        </ul>
+    </div>
 </main>
 
 </body>

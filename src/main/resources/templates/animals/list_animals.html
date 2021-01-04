@@ -116,12 +116,12 @@
     </div>
 </div>
 
-<a href="/">Back</a>
+<a class="button" href="/">Back</a>
 
 <!-- ANIMALS table -->
 <div id="container-animals">
-    <h1>Animals</h1>
-    <a th:href="@{/animals/add_animal_form}">Add animal</a>
+    <h1 class="table-title">Animals</h1>
+    <a class="button" th:href="@{/animals/add_animal_form}">Add animal</a>
     <br/><br/>
     <div id="container-animals-table">
         <table id="animals-table">
@@ -149,12 +149,12 @@
                 <td th:text="${animal.breed}">Breed</td>
                 <td th:text="${animal.sex}">Sex</td>
                 <td>
-                    <a th:href="@{'../edit_animal/' + ${animal.code}}">Edit</a>
+                    <a class="table-action" th:href="@{'../edit_animal/' + ${animal.code}}">Edit</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'../delete_animal/' + ${animal.code}}"
+                    <a class="table-action" th:href="@{'../delete_animal/' + ${animal.code}}"
                        onclick="if (!(confirm('Are you sure you want to delete this animal?'))) return false">Delete</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{${animal.code}}">Measurements&Distribution</a>
+                    <a class="table-action" th:href="@{${animal.code}}">Measurements&Distribution</a>
                 </td>
             </tr>
             </tbody>
@@ -165,7 +165,7 @@
 <!-- MEASUREMENTS + DISTRIBUTION tables for a SPECIFIC ANIMAL -->
 <div id="container-details">
     <div id="container-measurements">
-        <h1 th:text="${selectedAnimal.code + ' - Measurements'}">Measurements</h1>
+        <h1 class="table-title" th:text="${selectedAnimal.code + ' - Measurements'}">Measurements</h1>
         <div id="container-measurements-table">
             <table id="measurements-table">
                 <thead>
@@ -191,8 +191,8 @@
     </div>
 
     <div id="container-distribution">
-        <h1 th:text="${selectedAnimal.code + ' - Distribution'}">Distribution</h1>
-        <button id="letAnimalInSector" type="button" class="btn btn-default" data-toggle="modal"
+        <h1 class="table-title" th:text="${selectedAnimal.code + ' - Distribution'}">Distribution</h1>
+        <button id="letAnimalInSector" type="button" class="button" data-toggle="modal"
                 data-target="#letAnimalInSectorModal">
             Let animal in sector
         </button>
@@ -215,14 +215,14 @@
                     <td th:text="${animalSector.residingTime.getStartTime()}">Start time</td>
                     <td th:text="${animalSector.residingTime.getEndTime()}">Start time</td>
                     <td th:if="${animalSector.residingTime.getEndTime() == null}">
-                        <button th:id="'moveAnimal' + ${animalSector.animalCode} + ${animalSector.sectorCode}"
+                        <button class="table-action" th:id="'moveAnimal' + ${animalSector.animalCode} + ${animalSector.sectorCode}"
                                 type="button"
-                                class="btn btn-default" data-toggle="modal" data-target="#moveAnimalModal"
+                                data-toggle="modal" data-target="#moveAnimalModal"
                                 th:attr="onclick='insertOldSector(\'' + ${animalSector.sectorCode} + '\');'">
                             Move
                         </button>
                         &nbsp;&nbsp;&nbsp;
-                        <a th:href="@{'../delete_animal_sector/animal_code/' + ${animalSector.animalCode} + '/sector_code/' + ${animalSector.sectorCode}}"
+                        <a class="table-action" th:href="@{'../delete_animal_sector/animal_code/' + ${animalSector.animalCode} + '/sector_code/' + ${animalSector.sectorCode}}"
                            onclick="if (!(confirm('Are you sure you want to delete this distribution?'))) return false">Delete</a>
                     </td>
                 </tr>
