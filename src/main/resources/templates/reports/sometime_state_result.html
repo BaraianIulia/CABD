@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sometime state result</title>
+    <link rel="stylesheet" th:href="@{/css/reports.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<header style="margin: 10px;">
+    <a class="button-rep" href="/reports/reports">Back</a>
+</header>
+
+<main>
+    <br/>
+    <h2 class="res-title">State at given time</h2>
+    <div class="container-result">
+        <div class="cont-result">
+            <table id="animals-result" class="table-striped">
+                <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Weight</th>
+                    <th>Height</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${resultAnimal.animalCode}">Code</td>
+                    <td th:text="${resultAnimal.weight}">Weight</td>
+                    <td th:text="${resultAnimal.height}">Height</td>
+                    <td th:text="${resultAnimal.measurementDate.getStartTime()}">Start</td>
+                    <td th:text="${resultAnimal.measurementDate.getEndTime()}">End</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

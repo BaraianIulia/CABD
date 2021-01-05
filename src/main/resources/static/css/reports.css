@@ -1,0 +1,87 @@
+#animals-result{
+    border: 1px solid black;
+    font-family : Brush Script MT, Brush Script Std, cursive;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#animals-result-current{
+    border: 1px solid black;
+    font-family : Brush Script MT, Brush Script Std, cursive;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#var-result{
+    border: 1px solid black;
+    font-family : Brush Script MT, Brush Script Std, cursive;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#longest-result{
+    border: 1px solid black;
+    font-family : Brush Script MT, Brush Script Std, cursive;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container-result{
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+.cont-result {
+    overflow: auto;
+    height: 700px;
+}
+
+#animals-result td, #animals-result th, #animals-result-current td, #animals-result-current th, #var-result td, #var-result th, #longest-result td, #longest-result th {
+    border: 1px solid #ddd;
+    padding: 40px;
+}
+
+#animals-result tr:nth-child(even){background-color: #f2f2f2;}
+#animals-result tr:hover {background-color: #ddd;}
+#animals-result-current tr:nth-child(even){background-color: #f2f2f2;}
+#animals-result-current tr:hover {background-color: #ddd;}
+#var-result tr:nth-child(even){background-color: #f2f2f2;}
+#var-result tr:hover {background-color: #ddd;}
+#longest-result tr:nth-child(even){background-color: #f2f2f2;}
+#longest-result tr:hover {background-color: #ddd;}
+
+#animals-result th, #animals-result-current th, #var-result th, #longest-result th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.res-title{
+    font-size: 60px;
+    color: black;
+    align-content: center;
+    text-align: center;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.button-rep {
+    text-decoration: none;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.button-rep:hover{
+    text-decoration: none;
+    background-color: #77d17b; /* Green */
+    color: white;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}

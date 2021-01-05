@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Get longest period for max height for an animal</title>
+    <link rel="stylesheet" th:href="@{/css/reports.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<header style="margin: 10px;">
+    <a class="button-rep" href="/reports/reports">Back</a>
+    <h1 class="header-title">LONGEST MAX PERIOD</h1>
+</header>
+
+<main>
+    <br/>
+    <div class="row">
+        <div class="col-md-10 col-xl-10 col-lg-10">
+            <div class="input-group" style="margin: 10px;">
+                <p>Please enter code for desired animal</p>
+                <form action="#" th:action="@{/reports/long_result}"
+                      method="get">
+                    Animal code: <input type="text" id="p_code" name="p_code">
+                    <br/><br/>
+                    <button class="button-rep" type="submit">See longest period</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
