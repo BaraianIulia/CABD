@@ -1,0 +1,19 @@
+table td{
+    vertical-align:top;
+    border:solid 1px #888;
+    padding:10px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.table-title {
+    font-size: 70px;
+    color: black;
+    align-content: center;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.column-info{
+    background-color: #4CAF50;
+    color: white;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}

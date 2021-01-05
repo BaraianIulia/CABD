@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/error.css}">
+</head>
+<body>
+<h1 class="table-title">My Zoo Error Page</h1>
+<table>
+    <tr>
+        <td class="column-info">Date</td>
+        <td th:text="${timestamp}"/>
+    </tr>
+    <tr>
+        <td class="column-info">Path</td>
+        <td th:text="${path}"/>
+    </tr>
+    <tr>
+        <td class="column-info">Error</td>
+        <td th:text="${error}"/>
+    </tr>
+    <tr>
+        <td class="column-info">Status</td>
+        <td th:text="${status}"/>
+    </tr>
+    <tr>
+        <td class="column-info">Message</td>
+        <td th:text="${message}"/>
+    </tr>
+    <tr>
+        <td class="column-info">Exception</td>
+        <td th:text="${exception}"/>
+    </tr>
+    <tr>
+        <td class="column-info">Trace</td>
+        <td>
+            <pre th:text="${trace}"/>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
