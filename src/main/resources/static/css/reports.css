@@ -39,7 +39,7 @@
 
 #animals-result td, #animals-result th, #animals-result-current td, #animals-result-current th, #var-result td, #var-result th, #longest-result td, #longest-result th {
     border: 1px solid #ddd;
-    padding: 40px;
+    padding: 30px;
 }
 
 #animals-result tr:nth-child(even){background-color: #f2f2f2;}
@@ -52,8 +52,8 @@
 #longest-result tr:hover {background-color: #ddd;}
 
 #animals-result th, #animals-result-current th, #var-result th, #longest-result th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: left;
     background-color: #4CAF50;
     color: white;

@@ -28,12 +28,12 @@
 
 #zookeepers-table td, #zookeepers-table th {
     border: 1px solid #ddd;
-    padding: 40px;
+    padding: 30px;
 }
 
 #distribution-table td, #distribution-table th {
     border: 1px solid #ddd;
-    padding: 60px;
+    padding: 30px;
 }
 
 #zookeepers-table tr:nth-child(even) {
@@ -53,8 +53,8 @@
 }
 
 #zookeepers-table th, #distribution-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: left;
     background-color: #4CAF50;
     color: white;

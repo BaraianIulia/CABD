@@ -28,17 +28,17 @@
 
 #animals-table td, #animals-table th{
     border: 1px solid #ddd;
-    padding: 40px;
+    padding: 30px;
 }
 
 #measurements-table td, #measurements-table th{
     border: 1px solid #ddd;
-    padding: 60px;
+    padding: 30px;
 }
 
 #distribution-table td, #distribution-table th{
     border: 1px solid #ddd;
-    padding: 60px;
+    padding: 30px;
 }
 
 #animals-table tr:nth-child(even) {
@@ -66,8 +66,8 @@
 }
 
 #animals-table th, #measurements-table th, #distribution-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: left;
     background-color: #4CAF50;
     color: white;
