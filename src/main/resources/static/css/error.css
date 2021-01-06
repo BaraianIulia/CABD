@@ -1,8 +1,8 @@
-table td{
-    vertical-align:top;
-    border:solid 1px #888;
-    padding:10px;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+table td {
+    vertical-align: top;
+    border: solid 1px #888;
+    padding: 10px;
+    font-family: cursive;
 }
 
 .table-title {
@@ -12,8 +12,8 @@ table td{
     font-family: Brush Script MT, Brush Script Std, cursive;
 }
 
-.column-info{
+.column-info {
     background-color: #4CAF50;
     color: white;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
 }

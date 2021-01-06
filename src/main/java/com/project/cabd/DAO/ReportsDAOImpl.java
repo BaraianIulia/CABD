@@ -96,7 +96,7 @@ public class ReportsDAOImpl implements ReportsDAO {
     }
 
     @Override
-    public List<Variation> getVariatio(String code) {
+    public List<Variation> getVariation(String code) {
         SqlParameterSource params = new MapSqlParameterSource()
                 .addValue("p_code", code);
         Map resultSet = readVariation.execute(params);

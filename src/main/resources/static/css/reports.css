@@ -1,32 +1,32 @@
-#animals-result{
+#animals-result {
     border: 1px solid black;
-    font-family : Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
     border-collapse: collapse;
     width: 100%;
 }
 
-#animals-result-current{
+#animals-result-current {
     border: 1px solid black;
-    font-family : Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
     border-collapse: collapse;
     width: 100%;
 }
 
-#var-result{
+#var-result {
     border: 1px solid black;
-    font-family : Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
     border-collapse: collapse;
     width: 100%;
 }
 
-#longest-result{
+#longest-result {
     border: 1px solid black;
-    font-family : Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
     border-collapse: collapse;
     width: 100%;
 }
 
-.container-result{
+.container-result {
     margin: 0 auto;
     width: 80%;
     text-align: center;
@@ -42,29 +42,52 @@
     padding: 30px;
 }
 
-#animals-result tr:nth-child(even){background-color: #f2f2f2;}
-#animals-result tr:hover {background-color: #ddd;}
-#animals-result-current tr:nth-child(even){background-color: #f2f2f2;}
-#animals-result-current tr:hover {background-color: #ddd;}
-#var-result tr:nth-child(even){background-color: #f2f2f2;}
-#var-result tr:hover {background-color: #ddd;}
-#longest-result tr:nth-child(even){background-color: #f2f2f2;}
-#longest-result tr:hover {background-color: #ddd;}
+#animals-result tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#animals-result tr:hover {
+    background-color: #ddd;
+}
+
+#animals-result-current tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#animals-result-current tr:hover {
+    background-color: #ddd;
+}
+
+#var-result tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#var-result tr:hover {
+    background-color: #ddd;
+}
+
+#longest-result tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#longest-result tr:hover {
+    background-color: #ddd;
+}
 
 #animals-result th, #animals-result-current th, #var-result th, #longest-result th {
     padding-top: 10px;
     padding-bottom: 10px;
-    text-align: left;
+    text-align: center;
     background-color: #4CAF50;
     color: white;
 }
 
-.res-title{
+.res-title {
     font-size: 60px;
     color: black;
     align-content: center;
     text-align: center;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
 }
 
 .button-rep {
@@ -76,12 +99,12 @@
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
 }
 
-.button-rep:hover{
+.button-rep:hover {
     text-decoration: none;
     background-color: #77d17b; /* Green */
     color: white;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
 }

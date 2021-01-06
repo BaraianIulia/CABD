@@ -20,7 +20,7 @@
 
 #zookeepers-table, #distribution-table, th, td {
     border: 1px solid black;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
@@ -28,12 +28,12 @@
 
 #zookeepers-table td, #zookeepers-table th {
     border: 1px solid #ddd;
-    padding: 30px;
+    padding: 5px 2px;
 }
 
 #distribution-table td, #distribution-table th {
     border: 1px solid #ddd;
-    padding: 30px;
+    padding: 5px 2px;
 }
 
 #zookeepers-table tr:nth-child(even) {
@@ -55,7 +55,7 @@
 #zookeepers-table th, #distribution-table th {
     padding-top: 10px;
     padding-bottom: 10px;
-    text-align: left;
+    text-align: center;
     background-color: #4CAF50;
     color: white;
     table-layout: fixed;
@@ -65,7 +65,7 @@
     font-size: 70px;
     color: black;
     align-content: center;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
 }
 
 .button {
@@ -77,14 +77,14 @@
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
 }
 
 .button:hover {
     text-decoration: none;
     background-color: #77d17b; /* Green */
     color: white;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
 }
 
 .table-action {
@@ -95,12 +95,22 @@
     padding: 0;
     font: inherit;
     cursor: pointer;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
     outline: inherit;
 }
 
 .table-action:hover {
     color: #77d17b;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: cursive;
     text-decoration: underline;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #77d17b; /* Green */
+    color: white;
 }

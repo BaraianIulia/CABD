@@ -9,7 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+    <link id="themecss" rel="stylesheet" type="text/css"
+          href="//www.shieldui.com/shared/components/latest/css/light/all.min.css"/>
     <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 </head>
@@ -68,10 +69,10 @@
         var lid = document.getElementsByName("idd[]");
         var lih = document.getElementsByName("idh[]");
         var hh = lih[0].attributes[2].nodeValue;
-        hh = hh.slice(1,-1);
+        hh = hh.slice(1, -1);
         hh = JSON.parse("[" + hh + "]");
         var dd = lid[0].attributes[2].nodeValue;
-        dd = dd.slice(1,-1);
+        dd = dd.slice(1, -1);
         dd = dd.split(",");
         $("#chart").shieldChart({
             theme: "light",
@@ -84,7 +85,7 @@
             },
             axisX: {
                 ticksRepeat: 8,
-                categoricalValues:  dd
+                categoricalValues: dd
             },
             tooltipSettings: {
                 chartBound: true,
@@ -95,6 +96,7 @@
             },
             dataSeries: [{
                 seriesType: 'line',
+                color: 'green',
                 collectionAlias: "Height",
                 data: hh
             }]

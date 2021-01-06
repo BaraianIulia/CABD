@@ -187,7 +187,8 @@
 <!-- DISTRIBUTION tables for a SPECIFIC ZOOKEEPER -->
 <div id="container-details">
     <div id="container-distribution">
-        <h1 class="table-title" th:text="${selectedZookeeper.firstName + ' ' + selectedZookeeper.lastName + ' - Distribution'}">
+        <h1 class="table-title"
+            th:text="${selectedZookeeper.firstName + ' ' + selectedZookeeper.lastName + ' - Distribution'}">
             Distribution</h1>
         <button id="insertWorkingHours" type="button" class="button" data-toggle="modal"
                 data-target="#insertWorkingHoursModal">
@@ -223,7 +224,8 @@
                             Change working program
                         </button>
                         &nbsp;&nbsp;&nbsp;
-                        <a class="table-action" th:href="@{'../delete_zookeeper_working_hours/zookeeper_cnp/' + ${zookeeperDistribution.zookeeperCnp} + '/sector_code/' + ${zookeeperDistribution.sectorCode} + '/start_hour/' + ${zookeeperDistribution.workingHours.startHour} + '/end_hour/' + ${zookeeperDistribution.workingHours.endHour}}"
+                        <a class="table-action"
+                           th:href="@{'../delete_zookeeper_working_hours/zookeeper_cnp/' + ${zookeeperDistribution.zookeeperCnp} + '/sector_code/' + ${zookeeperDistribution.sectorCode} + '/start_hour/' + ${zookeeperDistribution.workingHours.startHour} + '/end_hour/' + ${zookeeperDistribution.workingHours.endHour}}"
                            onclick="if (!(confirm('Are you sure you want to delete this distribution?'))) return false">Delete</a>
                     </td>
                 </tr>
