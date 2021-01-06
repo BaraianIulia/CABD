@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -53,13 +55,38 @@ public class ReportsController {
 
     @RequestMapping(value = "/sometime_result", method = RequestMethod.GET)
     public String getsometime(@RequestParam(name = "p_code") String code, @RequestParam(name = "desired_date") String ddate, Model model) {
-        AnimalMeasurement rez = reportsDAOImpl.getSometime(code, ddate);
-        if (rez.getMeasurementDate() == null) {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+        Date date2=new Date(System.currentTimeMillis());
+        Date date1=new Date();
+        try {
+
+            date1 = formatter.parse(ddate);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        System.out.println(date1);
+        System.out.println(date2);
+        if (date2.before(date1)){
+            AnimalMeasurement rez = new AnimalMeasurement();
             rez.setAnimalCode("-");
             TTime t = new TTime(new java.sql.Date(System.currentTimeMillis()), new java.sql.Date(System.currentTimeMillis()));
             rez.setMeasurementDate(t);
+            rez.setHeight(0);
+            rez.setWeight(0);
+            model.addAttribute("resultAnimal", rez);
+            model.addAttribute("texterr", "Date cannot be in the future!");
         }
-        model.addAttribute("resultAnimal", rez);
+        else {
+            AnimalMeasurement rez = reportsDAOImpl.getSometime(code, ddate);
+            if (rez.getMeasurementDate() == null) {
+                rez.setAnimalCode("-");
+                TTime t = new TTime(new java.sql.Date(System.currentTimeMillis()), new java.sql.Date(System.currentTimeMillis()));
+                rez.setMeasurementDate(t);
+            }
+            model.addAttribute("resultAnimal", rez);
+            model.addAttribute("texterr", "");
+        }
         return "reports/sometime_state_result";
     }
 
