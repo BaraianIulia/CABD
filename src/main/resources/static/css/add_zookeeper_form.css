@@ -1,7 +1,7 @@
 #container-add-zookeeper {
-
+    padding: 10px;
     width: 23%;
-    background-color: #aa2711;
+    background-color: #be4016;
     position: absolute;
     bottom: 3%;
     right: 25%;
@@ -12,6 +12,7 @@
 #add-zookeeper {
     color: black;
     align-content: center;
+    font-size: 25px;
     font-family: Brush Script MT, Brush Script Std, cursive;
 }
 
@@ -35,10 +36,10 @@ html {
     background-color: #9e1b10; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 32px;
     text-align: center;
     display: inline-block;
-    font-size: 16px;
+    font-size: 25px;
     font-family: Brush Script MT, Brush Script Std, cursive;
 }
 

@@ -12,7 +12,7 @@ public interface ReportsDAO {
 
     AnimalMeasurement getSometime(String code, String ddate);
 
-    List<Variation> getVariatio(String code);
+    List<Variation> getVariation(String code);
 
     Longestmax getLong(String code);
 

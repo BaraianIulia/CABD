@@ -42,7 +42,7 @@ public class ReportsController {
     }
 
     @RequestMapping(value = "/current_result", method = RequestMethod.GET)
-    public String getcurrent(@RequestParam(name = "p_code") String code, Model model) {
+    public String getCurrent(@RequestParam(name = "p_code") String code, Model model) {
         Animal rez = reportsDAOImpl.getCurrent(code);
         model.addAttribute("resultAnimal", rez);
         return "reports/current_state_result";
@@ -54,10 +54,10 @@ public class ReportsController {
     }
 
     @RequestMapping(value = "/sometime_result", method = RequestMethod.GET)
-    public String getsometime(@RequestParam(name = "p_code") String code, @RequestParam(name = "desired_date") String ddate, Model model) {
+    public String getSometime(@RequestParam(name = "p_code") String code, @RequestParam(name = "desired_date") String ddate, Model model) {
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
-        Date date2=new Date(System.currentTimeMillis());
-        Date date1=new Date();
+        Date date2 = new Date(System.currentTimeMillis());
+        Date date1 = new Date();
         try {
 
             date1 = formatter.parse(ddate);
@@ -67,7 +67,7 @@ public class ReportsController {
         }
         System.out.println(date1);
         System.out.println(date2);
-        if (date2.before(date1)){
+        if (date2.before(date1)) {
             AnimalMeasurement rez = new AnimalMeasurement();
             rez.setAnimalCode("-");
             TTime t = new TTime(new java.sql.Date(System.currentTimeMillis()), new java.sql.Date(System.currentTimeMillis()));
@@ -76,8 +76,7 @@ public class ReportsController {
             rez.setWeight(0);
             model.addAttribute("resultAnimal", rez);
             model.addAttribute("texterr", "Date cannot be in the future!");
-        }
-        else {
+        } else {
             AnimalMeasurement rez = reportsDAOImpl.getSometime(code, ddate);
             if (rez.getMeasurementDate() == null) {
                 rez.setAnimalCode("-");
@@ -96,8 +95,8 @@ public class ReportsController {
     }
 
     @RequestMapping(value = "/var_result", method = RequestMethod.GET)
-    public String getvariation(@RequestParam(name = "p_code") String code, Model model) {
-        List<Variation> rez = reportsDAOImpl.getVariatio(code);
+    public String getVariation(@RequestParam(name = "p_code") String code, Model model) {
+        List<Variation> rez = reportsDAOImpl.getVariation(code);
         model.addAttribute("resultVar", rez);
         List<Date> dated = new ArrayList<Date>();
         List<Float> hei = new ArrayList<Float>();
@@ -116,7 +115,7 @@ public class ReportsController {
     }
 
     @RequestMapping(value = "/long_result", method = RequestMethod.GET)
-    public String getlongest(@RequestParam(name = "p_code") String code, Model model) {
+    public String getLongest(@RequestParam(name = "p_code") String code, Model model) {
         Longestmax rez = reportsDAOImpl.getLong(code);
         model.addAttribute("resultVar", rez);
         return "reports/longest_result";
