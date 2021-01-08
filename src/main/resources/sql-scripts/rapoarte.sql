@@ -39,22 +39,24 @@ create or replace package body RAPOARTE is
         v_maxim sys_refcursor;
     begin
         open v_maxim for 'WITH animalsdetails AS(
-                        SELECT animal_code, am.measurement_date.start_time as startt, (CASE WHEN am.measurement_date.end_time IS null THEN (SELECT SYSDATE FROM dual) ELSE am.measurement_date.end_time END ) as endt,height
-                        FROM animals_measurements am)
-                        SELECT *
-                        FROM animalsdetails MATCH_RECOGNIZE (
-                             PARTITION BY animal_code
-                             ORDER BY startt
-                             MEASURES LAST(creste.startt) AS startc, LAST(endt) AS endc, 24*(LAST(endt)-LAST(creste.startt)) AS nr_ore,
-                                     LAST(creste.height) as HEIGHT
-                             ONE ROW PER MATCH
-                             PATTERN (creste{1,} egal{0,} scade{0,})
-                             DEFINE
-                                creste AS creste.height > PREV(creste.height),
-                                scade AS scade.height < PREV(scade.height),
-                                egal AS egal.height = PREV(egal.height)
-                             ) a
-                        WHERE animal_code=''' || p_code || '''AND height = (SELECT max(j.height) FROM animals_measurements j WHERE j.animal_code=''' || p_code || ''')';
+                            SELECT animal_code, am.measurement_date.start_time as startt, (CASE WHEN am.measurement_date.end_time IS null THEN (SELECT SYSDATE FROM dual) ELSE am.measurement_date.end_time END ) as endt,height
+                            FROM animals_measurements am),
+                            nroremax AS (
+                            SELECT *
+                            FROM animalsdetails MATCH_RECOGNIZE (
+                                 PARTITION BY animal_code
+                                 ORDER BY startt
+                                 MEASURES LAST(creste.startt) AS startc, LAST(endt) AS endc, 24*(LAST(endt)-LAST(creste.startt)) AS nr_ore,
+                                         LAST(creste.height) as HEIGHT
+                                 ONE ROW PER MATCH
+                                 PATTERN (creste{1,} egal{0,} scade{1,} | creste{1,} egal{0,} $)
+                                 DEFINE
+                                    creste AS creste.height > PREV(creste.height),
+                                    scade AS scade.height < PREV(scade.height),
+                                    egal AS egal.height = PREV(egal.height)
+                                 ) a
+                            WHERE animal_code=''' || p_code || ''')
+                            SELECT nm.animal_code, nm.startc, nm.endc, nm.nr_ore, nm.height FROM nroremax nm WHERE nm.nr_ore=(SELECT max(s.nr_ore) FROM nroremax s)';
         return v_maxim;
         
         exception
@@ -90,3 +92,26 @@ create or replace package body RAPOARTE is
     end variation_height;
 
 end RAPOARTE;
+
+/*
+'WITH animalsdetails AS(
+                        SELECT animal_code, am.measurement_date.start_time as startt, (CASE WHEN am.measurement_date.end_time IS null THEN (SELECT SYSDATE FROM dual) ELSE am.measurement_date.end_time END ) as endt,height
+                        FROM animals_measurements am),
+                        maxheight AS (SELECT max(j.height) as maxh FROM animals_measurements j WHERE j.animal_code=''' || p_code || '''),
+                        nroremax AS (
+                        SELECT *
+                        FROM animalsdetails MATCH_RECOGNIZE (
+                             PARTITION BY animal_code
+                             ORDER BY startt
+                             MEASURES LAST(creste.startt) AS startc, LAST(endt) AS endc, 24*(LAST(endt)-LAST(creste.startt)) AS nr_ore,
+                                     LAST(creste.height) as HEIGHT
+                             ONE ROW PER MATCH
+                             PATTERN (creste{1,} egal{0,} scade{1,} | creste{1,} egal{0,})
+                             DEFINE
+                                creste AS creste.height > PREV(creste.height),
+                                scade AS scade.height < PREV(scade.height),
+                                egal AS egal.height = PREV(egal.height)
+                             ) a, maxheight m
+                        WHERE animal_code=''' || p_code || ''' AND height = m.maxh)
+                        SELECT nm.animal_code, nm.startc, nm.endc, nm.nr_ore, nm.height FROM nroremax nm WHERE nm.nr_ore=(SELECT max(s.nr_ore) FROM nroremax s)'
+*/
